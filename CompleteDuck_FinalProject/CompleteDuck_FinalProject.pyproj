@@ -42,11 +42,13 @@
     <Folder Include="decryptionPackage\" />
     <Folder Include="mainPackage\" />
     <Folder Include="Data\" />
+    <Folder Include="ProjectPhoto\" />
     <Folder Include="photoPackage\" />
     <Folder Include="txtPackage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\UCEnglish.txt" />
+    <Content Include="ProjectPhoto\BuildingAndMovieQuote.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
