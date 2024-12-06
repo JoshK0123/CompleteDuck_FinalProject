@@ -1,5 +1,6 @@
 #main.py
 
+from decryptionPackage.decryption import *
 from photoPackage.photo import *
 from txtPackage.txt import *
 if __name__ == "__main__":
@@ -29,3 +30,5 @@ if __name__ == "__main__":
     Location_string = ' '.join(flattened_Location)
 
     print(Location_string)
+
+    decrypt_movie_title(b'gAAAAABnJ6xXc8WnJ2DxuUMI3yz9g4ZaGNGUd6TPU96o-rmP1YfrxSq387RxZtyEt2Hc1WNWXcsUaz5oWJGd_W7Gs6wNXMoDG7bnwSawyeXVmuNEP88HlA8=',b'WVRqW7wUIQ1mgbz5PAonHGJn-XknVdDV74L_RNFjU0o=')
