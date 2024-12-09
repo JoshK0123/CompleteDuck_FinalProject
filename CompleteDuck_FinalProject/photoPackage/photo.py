@@ -13,7 +13,7 @@
 # Brief Description of the assignment: This assignment required the group to decode encrypted messages in two different ways, one requiring the encryption key, and the other using indexing.
 #                                      Then we needed to take a photo to show in the results of the solution.
 # Brief Description of what this module does. This module defines a function that gives the path to the image file, loads, and displays the photo our group took at the location that was decrypted. 
-# Citations: In-class material, Bill Nicholson
+# Citations: In-class material, Bill Nicholson, Copilot
 # Anything else that's relevant: Everyone was involved in the making of this module. 
 ###############################################################################
 

@@ -13,13 +13,12 @@
 # Brief Description of the assignment: This assignment required the group to decode encrypted messages in two different ways, one requiring the encryption key, and the other using indexing.
 #                                      Then we needed to take a photo to show in the results of the solution.
 # Brief Description of what this module does. This module takes the encryption key given by the professor and defines a function that decypts the movie title using cryptography.ferent.
-# Citations: In-class material, Bill Nicholson
+# Citations: In-class material, Bill Nicholson, Copilot
 # Anything else that's relevant: Everyone was involved in the making of this module. 
 ###############################################################################
 
 from cryptography.fernet import Fernet
- 
- 
+
 def decrypt_movie_title(encrypted_title, key):
     """
     Decrypts an encrypted movie title using the provided key.
@@ -33,11 +32,3 @@ def decrypt_movie_title(encrypted_title, key):
     decrypted_title = fernet.decrypt(encrypted_title)
     # Convert bytes to string
     return decrypted_title.decode()
- 
-# Example usage
-encrypted_title = b'gAAAAABnJ6xXc8WnJ2DxuUMI3yz9g4ZaGNGUd6TPU96o-rmP1YfrxSq387RxZtyEt2Hc1WNWXcsUaz5oWJGd_W7Gs6wNXMoDG7bnwSawyeXVmuNEP88HlA8='
-key = b'WVRqW7wUIQ1mgbz5PAonHGJn-XknVdDV74L_RNFjU0o='
- 
-# Decrypt the movie title
-decrypted_movie_title = decrypt_movie_title(encrypted_title, key)
-print(f"Decrypted movie title: {decrypted_movie_title}")

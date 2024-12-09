@@ -13,39 +13,36 @@
 # Brief Description of the assignment: This assignment required the group to decode encrypted messages in two different ways, one requiring the encryption key, and the other using indexing.
 #                                      Then we needed to take a photo to show in the results of the solution.
 # Brief Description of what this module does. This module calls the functions from all other modules, and prints the decrypted messages and photo taken. 
-# Citations: In-class material, Bill Nicholson
+# Citations: In-class material, Bill Nicholson, Copilot
 # Anything else that's relevant: Everyone was involved in the making of this module. 
 ###############################################################################
 
 from decryptionPackage.decryption import *
 from photoPackage.photo import *
 from txtPackage.txt import *
+from jsonUtilitiesPackage.jsonUtilities import *
 if __name__ == "__main__":
     
     printPhoto("./ProjectPhoto/BuildingAndMovieQuote.jpg")
-    
+
+
     data = read_txt_to_list('./Data/UCEnglish.txt')
-    indices = [7480, 28894, 8018, 46342, 42061, 103568, 346, 13068, 23887, 21407]
-    Location = [data[i] for i in indices]
+    indices = jsonValues()
+    location = get_location(data, indices)
 
-    flattened_Location = []
+    location_str = ' '.join(location)
 
-    def flatten_and_convert_to_str(item):
-        '''
-        Converts a nested list into a single flat list, and converts elements to strings after flattening.
-        @return list: the flattened list
-        '''
-        if isinstance(item, list):
-            for sub_item in item:
-                flatten_and_convert_to_str(sub_item)
-        else:
-            flattened_Location.append(str(item))
+    print(location_str)
 
-    for item in Location:
-        flatten_and_convert_to_str(item)
+    data = jsonValuesForMovies()
+    # The key given by Professor Nicholson
+    key = b'WVRqW7wUIQ1mgbz5PAonHGJn-XknVdDV74L_RNFjU0o='
 
-    Location_string = ' '.join(flattened_Location)
+    # Decrypt the titles for "CompleteDuck"
+    encrypted_titles = data["CompleteDuck"]
+    decrypted_titles = [decrypt_movie_title(bytes(title, 'utf-8'), key) for title in encrypted_titles]
 
-    print(Location_string)
+    for title in decrypted_titles:
+        print(title)
 
-    decrypt_movie_title(b'gAAAAABnJ6xXc8WnJ2DxuUMI3yz9g4ZaGNGUd6TPU96o-rmP1YfrxSq387RxZtyEt2Hc1WNWXcsUaz5oWJGd_W7Gs6wNXMoDG7bnwSawyeXVmuNEP88HlA8=',b'WVRqW7wUIQ1mgbz5PAonHGJn-XknVdDV74L_RNFjU0o=')
+
