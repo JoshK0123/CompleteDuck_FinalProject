@@ -18,7 +18,6 @@
 ###############################################################################
 
 from cryptography.fernet import Fernet
-from jsonUtilitiesPackage.jsonUtilities import *
 
 def decrypt_movie_title(encrypted_title, key):
     """
